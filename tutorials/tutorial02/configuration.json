@@ -1,0 +1,9 @@
+[
+    {
+        "name": "tutorials.tutorial01.data_sender.DataSender",
+        "name_type": "type",
+        "module": "tutorials.tutorial01.data_sender",
+        "factory": "DataSender",
+        "singleton": true
+    }
+]
