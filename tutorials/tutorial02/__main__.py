@@ -6,6 +6,7 @@ it uses json to load configuration and load the right dependencies.
 import json
 # import the container from tutorial01
 from tutorials.tutorial01.dependencies import dependencies
+from tutorials.tutorial01.worker import Worker
 
 
 def main():
@@ -14,6 +15,10 @@ def main():
     with open('configuration.json') as file:
         configuration = json.load(file)
         dependencies.load_from_dicts(configuration)
+
+    # This worker depends on DataSender.
+    worker = Worker()
+    worker.do_the_job()
 
 
 if __name__ == '__main__':
