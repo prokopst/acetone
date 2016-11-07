@@ -20,8 +20,8 @@ class AcetoneContainer(object):
 
             self._dependencies[key] = factory_functor
 
-    def register_instance(self, key, service):
-        self.register_factory(key, lambda: service)
+    def register_instance(self, key, instance):
+        self.register_factory(key, lambda: instance)
 
     def clear(self):
         with self._lock:
