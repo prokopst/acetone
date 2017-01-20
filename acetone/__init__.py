@@ -1,3 +1,3 @@
 from .container import AcetoneContainer
-from .exceptions import (AcetoneError, AcetoneAlreadyRegisteredError,
-    AcetoneLoadError, AcetoneNotFoundError)
+from .exceptions import (AcetoneError, AcetoneAlreadyRegisteredError, AcetoneNotFoundError)
+from .resolver import resolve_type

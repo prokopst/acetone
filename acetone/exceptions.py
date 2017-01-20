@@ -8,7 +8,3 @@ class AcetoneNotFoundError(AcetoneError):
 
 class AcetoneAlreadyRegisteredError(AcetoneError):
     pass
-
-
-class AcetoneLoadError(AcetoneError):
-    pass

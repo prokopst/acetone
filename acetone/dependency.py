@@ -13,7 +13,7 @@ class BaseDependency(object):
     def _determine_name_and_original_objtype(self, objtype):
         # This is the only reasonable way to find attribute name of the service.
         # The other way would be very explicit:
-        #     my_name = Service('my_name', Class)
+        #     my_name = Dependency('my_name', Class)
         # but this is error prone and not convenient.
         mro = objtype.mro()
 
@@ -46,13 +46,13 @@ class Dependency(BaseDependency):
                 if thing is not _Undefined:
                     return thing
 
-            service = self._container[self._key]
+            dependency = self._container[self._key]
 
             # This is the magic trick which makes it fast. Instance member is
             # set by this code and all subsequent access is solved as
             # a member access, not as a descriptor access.
-            setattr(obj, self._name, service)
-            return service
+            setattr(obj, self._name, dependency)
+            return dependency
 
     def __repr__(self):
         return 'Dependency(' + repr(self._key) + ')'
@@ -82,10 +82,10 @@ class ClassDependency(BaseDependency):
                     raise AcetoneError()
                 return thing
 
-            service = self._container[self._key]
-            setattr(original_objtype, self._name, service)
+            dependency = self._container[self._key]
+            setattr(original_objtype, self._name, dependency)
 
-            return service
+            return dependency
 
     def __repr__(self):
         return 'ClassDependency(' + repr(self._key) + ')'
