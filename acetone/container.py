@@ -4,6 +4,9 @@ from threading import Lock
 from acetone.exceptions import AcetoneAlreadyRegisteredError, AcetoneNotFoundError
 from acetone.dependency import Dependency, ClassDependency
 
+...
+...
+...
 
 class AcetoneContainer(object):
     def __init__(self):
